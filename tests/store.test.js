@@ -1,3 +1,6 @@
+const { createStore } = require("../src/store");
+const { reducer } = require("../src/reducer");
+
 describe("createStore", () => {
   it("should return a store with getState, dispatch, and subscribe methods", () => {
     const store = createStore(reducer, 0);
