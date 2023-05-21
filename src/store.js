@@ -23,4 +23,6 @@
   };
 }
 
-module.exports = { createStore};
+
+export { createStore };
+// module.exports = { createStore};

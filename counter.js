@@ -1,9 +1,17 @@
+import { createStore } from "./src/store";
+import { countReducer } from "./src/countReducer";
+
 export function setupCounter(element) {
-  let counter = 0
+  const store = createStore(countReducer, 0);
+
   const setCounter = (count) => {
-    counter = count
-    element.innerHTML = `count is ${counter}`
-  }
-  element.addEventListener('click', () => setCounter(counter + 1))
-  setCounter(0)
+    element.innerHTML = `count is ${count}`;
+  };
+
+  element.addEventListener("click", () =>
+    store.dispatch({ type: "INCREMENT" })
+  );
+  
+  store.subscribe(() => setCounter(store.getState()));
+  setCounter(store.getState());
 }

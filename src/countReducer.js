@@ -1,4 +1,4 @@
-function reducer(state = 0, action) {
+function countReducer(state = 0, action) {
   switch (action.type) {
     case "INCREMENT":
       return state + 1;
@@ -7,4 +7,5 @@ function reducer(state = 0, action) {
   }
 }
 
-module.exports = {reducer};
+export { countReducer };
+// module.exports = { countReducer };
